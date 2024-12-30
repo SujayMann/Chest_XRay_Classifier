@@ -5,6 +5,8 @@ from torchvision.models import resnet50
 from torchvision import transforms, datasets
 from PIL import Image
 
+torch.manual_seed(42)
+
 class CustomModel(nn.Module):
     def __init__(self):
         super().__init__()
