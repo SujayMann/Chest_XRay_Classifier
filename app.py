@@ -20,7 +20,7 @@ class CustomModel(nn.Module):
 model = CustomModel()
 model.load_state_dict(torch.load('model_resnet50.pt', map_location=torch.device('cpu')), strict=False)
 
-labels = ['Normal', 'Pneumonia']
+labels = ['Pneumonia', 'Normal']
 
 st.title('Chest X-Ray Classifier')
 st.write('Pneumonia Detection from Chest X-rays')
