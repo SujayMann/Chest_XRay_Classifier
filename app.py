@@ -5,23 +5,6 @@ from torchvision.models import resnet50
 from torchvision import transforms, datasets
 from PIL import Image
 
-# torch.manual_seed(42)
-
-# class CustomModel(nn.Module):
-#     def __init__(self):
-#         super().__init__()
-#         self.resnet = resnet50(pretrained=True)
-#         self.resnet.fc = nn.Sequential(
-#             nn.Linear(2048, 1),
-#             nn.Sigmoid()
-#         )
-    
-#     def forward(self, x):
-#         return self.resnet(x)
-
-# model = CustomModel()
-# state_dict = torch.load('model_resnet50.pth', map_location=torch.device('cpu'))
-# model.load_state_dict(state_dict, strict=False)
 model = torch.load('model_resnet50.pth', map_location=torch.device('cpu'))
 
 labels = ['Normal', 'Pneumonia']
