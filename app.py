@@ -39,7 +39,7 @@ def main():
         st.image(img_path, caption='Uploaded Image')
         image = Image.open(img_path).convert('RGB')
         image_tensor = preprocess_image(image)
-        with torch.inference_mode():
+        with torch.no_grad():
             model.eval()
             result = model(image_tensor)
             pred = 1 if result > 0.5 else 0
