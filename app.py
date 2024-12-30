@@ -18,7 +18,8 @@ class CustomModel(nn.Module):
         return self.resnet(x)
 
 model = CustomModel()
-model.load_state_dict(torch.load('model_resnet50.pt', map_location=torch.device('cpu')), strict=False)
+state_dict = torch.load('model_resnet50.pth', map_location=torch.device('cpu'))
+model.load_state_dict(state_dict, strict=False)
 
 labels = ['Normal', 'Pneumonia']
 
@@ -39,10 +40,10 @@ def main():
         st.image(img_path, caption='Uploaded Image')
         image = Image.open(img_path).convert('RGB')
         image_tensor = preprocess_image(image)
-        with torch.inference_mode():
+        with torch.no_grad():
             model.eval()
             result = model(image_tensor)
-            pred = 1 if result > 0.5 else 0
+            pred = (result > 0.5).int()
             if pred == 1:
                 proba = result.item() * 100
             else:
