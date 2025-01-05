@@ -1,9 +1,4 @@
 import streamlit as st
-import torch
-from torch import nn
-from torchvision.models import resnet50
-from torchvision import transforms, datasets
-from PIL import Image
 
 def main():
     pg = st.navigation([
