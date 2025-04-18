@@ -33,7 +33,8 @@ def prediction_page():
             else:
                 proba = (1 - result.item()) * 100
 
-        st.write(f"Prediction: {labels[pred]} ({proba:.2f}%)")
+        st.write(f"Prediction: {labels[pred]}")
+        st.write(f"Confidence: {proba:.2f}%")
     
 if __name__ == '__page__':
     prediction_page()
