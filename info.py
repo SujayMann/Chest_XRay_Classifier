@@ -3,12 +3,12 @@ import streamlit as st
 def info_page():
     st.title("How to Use the App")
     st.write("""
-        This app helps you upload chest x-rays and classify between `NORMAL` and `PNEUMONIA` using a pre-trained CNN model.
+        This app helps you upload chest x-rays and classify them as `NORMAL` and `PNEUMONIA` using a pre-trained CNN model.
         
         **Steps**:
         1. Navigate to the **Predict** page via the sidebar.
         2. Upload an image using the **Browse files** button.
-        3. The model will predict if the x-ray shows pneumonia and display the result.
+        3. The model will predict if the x-ray shows traces of pneumonia and display the result.
     """)
 
     st.write("""If the app doesn't work, it is most likely due to unavailability of the model used for prediction.
